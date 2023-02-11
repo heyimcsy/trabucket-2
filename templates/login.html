@@ -1,16 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<style>
+    {% include 'header.html'%}
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
 
-</style>
+            $("#headers").load("header.html");  // 원하는 파일 경로를 삽입하면 된다
+            // $("#footers").load("footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
+
+        });
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
 <body>
+<div id="headers"></div>
+<div style="padding: 150px;">
+    <div class="loginfrm" id="loginfrm" method="post" action="login.do">
+
+        <table class="table">
+            <tr>
+                <td>
+                    <input type="text" name="id" id="id" placeholder="아이디" maxlength="10" required>
+                </td>
+                <td rowspan="2">
+
+                    <input type="image" src="../static/images/bt_login.gif">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" name="password" id="password" placeholder="비밀번호" maxlength="10" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label><input type="checkbox" name="c_id" value="SAVE">아이디 저장</label>
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="/signup">회원가입</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="#">아이디/비밀번호찾기</a>
+                </td>
+            </tr>
+        </table>
+
+</div>
+</div>
 
 </body>
 </html>
