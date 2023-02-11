@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,17 +42,7 @@
           media="screen">
 </head>
 <style>
-    .box_main {
-        position: absolute;
-        width: 270px;
-        height: 340px;
-        left: 74px;
-        top: 207px;
 
-        background: #FFFFFF;
-        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 20px;
-    }
 </style>
 <script>
     $(document).ready(function () {
@@ -64,7 +55,9 @@
             url: "/hi",
             data: {},
             success: function (response) {
+                console.log(response)
                 let rows = response['trabuckets']
+                console.log(rows)
                 for (let i = 0; i < rows.length; i++) {
                     let code = rows[i]['code']
                     let image = rows[i]['image']
@@ -77,7 +70,7 @@
                                         <a href="#">
                                        <h4 class="shirt_text" id="title">${title}</h4>
                                        <p class="price_text" id="sub_title">${sub_title}</p>
-                                       <div class="jewellery_img" id="image">${image}</div>
+                                       <div class="jewellery_img" id="image"><img src="${image}"></div>
                                        <div class="desc" id="desc">${desc}</div>
                                        <div class="btn_main">
                                            <div class="buy_bt" id="code">${code}</div>
@@ -266,7 +259,7 @@
                     <div class="fashion_section_2">
                         <div class="row">
                             <div class="col-lg-4 col-sm-4">
-                                <div class="box_main" id="test">
+                                <div class="box_main" id="test" >
                                     <h4 class="shirt_text">Jumkas</h4>
                                     <p class="price_text">Start Price <span style="color: #262626;">$ 100</span></p>
                                     <div class="jewellery_img"></div>

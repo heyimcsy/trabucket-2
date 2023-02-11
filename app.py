@@ -55,7 +55,7 @@ def main():
 
 @app.route('/hi', methods=["GET"])
 def trabucket_get():
-    travel_list = list(db.trabuckets.find({}, {'_id': False}))
+    travel_list = list(db.travel.find({}, {'_id': False}))
     return jsonify({'trabuckets':travel_list})
 
 
